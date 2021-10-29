@@ -3,16 +3,16 @@ var list = [];
 var status = "";
 
 function startBrowsingCapture() {
-    if (!browser.history.onVisited.hasListener(capture)) {
-        browser.history.onVisited.addListener(capture);
+    if (!browser.history.onTitleChanged.hasListener(capture)) {
+        browser.history.onTitleChanged.addListener(capture);
         status = "STARTED";
         console.log(Date().toLocaleString() + " starting");
     }
 }
 
 function stopBrowsingCapture() {
-    if (browser.history.onVisited.hasListener(capture)) {
-        browser.history.onVisited.removeListener(capture);
+    if (browser.history.onTitleChanged.hasListener(capture)) {
+        browser.history.onTitleChanged.removeListener(capture);
         status = "STOPPED";
         console.log(Date().toLocaleString() + " stopping");
     }
@@ -105,6 +105,7 @@ function saveData(data) {
     }).catch(error => console.log(error));
 }
 
+
 function init() {
     startBrowsingCapture();
     getMessage();
@@ -112,9 +113,10 @@ function init() {
     browser.windows.onRemoved.addListener(() => {
         downloadBrowsingHistory()
     });
+
+    setInterval(downloadBrowsingHistory,1200000); // every 20 minutes
+
 }
 
 
 init();
-
-
