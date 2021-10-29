@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "REGIS-BROWSER-HISTORY",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Capture web browsing history",
   "author": "acendrou",
   "background": {
