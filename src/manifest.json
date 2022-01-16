@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "REGIS-BROWSER-HISTORY",
-  "version": "0.2",
+  "version": "0.3",
   "description": "Capture web browsing history",
   "author": "acendrou",
   "background": {
@@ -17,6 +17,10 @@
     "history",
     "downloads"
   ],
+  "icons": {
+  "48": "img/icon-regis_48px_blue.png",
+  "96": "img/icon-regis_96px_blue.png"
+},
   "browser_specific_settings": {
     "gecko": {
       "id": "regis-browser-history@ekvidi"
